@@ -1,13 +1,48 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'core/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}">
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personal Homepage</title>
+  <title>My Personal Homepage</title>
 </head>
 <body>
-    <h1>Welcome to my Personal Homepage!</h1>
-    <p>This is some sample content.</p>
+  <header>
+    <h1>Welcome to My Personal Homepage</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <section id="about">
+      <h2>About Meeee</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor, justo vitae tempus venenatis, dui dui sagittis est, et hendrerit metus neque ac est.</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p>Here are some of my projects:</p>
+      <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>You can reach me at email@example.com</p>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 My Personal Homepage. All rights reserved.</p>
+  </footer>
 </body>
 </html>
