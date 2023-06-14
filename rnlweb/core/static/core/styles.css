@@ -1,0 +1,76 @@
+/* Global Styles */
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #E1F5FE, #B3E5FC);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header, nav, .container, footer {
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Specific Styles */
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+nav ul li a {
+  color: #fff;
+}
+
+.container {
+  overflow: auto;
+}
+
+section {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  float: left;
+  width: 300px;
+  margin-right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+section:last-child {
+  margin-right: 0;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
