@@ -21,6 +21,9 @@
   --danger: #e74a3b;
   --light: #f8f9fc;
   --dark: #5a5c69;
+  --semi-transparent-black: rgba(0, 0, 0, 0.85);
+  --most-transparent-black: rgba(0, 0, 0, 0.9);
+  --semi-transparent-white: rgba(255, 255, 255, 0.5);
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -34,7 +37,7 @@ html {
   font-family: var(--font-family-sans-serif);
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, var(--green), #5ac8fa, #B3E5FC);
+  background: linear-gradient(to bottom, var(--most-transparent-black), var(--semi-transparent-black), var(--most-transparent-black));
 }
 
 body {
