@@ -37,16 +37,12 @@ html {
   font-family: var(--font-family-sans-serif);
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, var(--most-transparent-black), var(--semi-transparent-black), var(--most-transparent-black));
+  background: linear-gradient(to-bottom, var(--most-transparent-black), var(--semi-transparent-black), var(--most-transparent-black));
 }
 
 body {
   margin: 0;
   padding: 0;
-}
-
-header, nav, .container, footer {
-  padding: 20px;
 }
 
 h1, h2 {
@@ -60,7 +56,7 @@ ul {
 
 li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 a {
@@ -90,12 +86,12 @@ nav ul li a {
 section {
   margin-top: 20px;
   border-top: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--gray);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--gray);
   float: left;
   width: 300px;
   margin-right: 20px;
-  background-color: var(--cyan);
+  background-color: radial-gradient(circle, var(--teal), var(--cyan));
 }
 
 section:last-child {
