@@ -65,19 +65,14 @@ a {
 }
 
 /* Specific Styles */
+/*
 header {
   background-color: radial-gradient(circle, var(--teal), var(--cyan));
+  position: sticky;
+  top: 0;
   color: #fff;
 }
-
-nav {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-nav ul li a {
-  color: #20c9a6;
-}
+*/
 
 .container {
   overflow: auto;
@@ -103,4 +98,44 @@ footer {
   color: #fff;
   font-size: 12px;
   text-align: center;
+}
+
+.about-me-container {
+  color: #fff;
+  box-shadow: 0 4px 6px var(--gray);
+  margin-top: 10px;
+}
+
+.about-me-text-container {
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-glow-container {
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.logo-glow-container::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  box-shadow: 100 100 0 500px 500px rgba(250, 255, 255); /* Adjust the color and size of the glow */
+  border-radius: 90%; /* Adjust the shape of the glow, if necessary */
+}
+
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
