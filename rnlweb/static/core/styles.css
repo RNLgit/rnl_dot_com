@@ -85,11 +85,19 @@ footer {
   text-align: center;
 }
 
+/*
 .about-me-container {
   color: #fff;
   box-shadow: 0 4px 6px var(--gray);
   margin-top: 10px;
+  position: relative;
+  height: 500vh;
+  background-image: url("{% static 'images/m2_bg_medium_2x.jpg' %}");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+*/
 
 .about-me-text-container {
   font-weight: bold;
@@ -101,15 +109,15 @@ footer {
 }
 
 .logo-glow-container {
-  position: absolute;
+  position: sticky;
   top: 50%;
   left: 33%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.4);
   display: inline-block;
 }
 
 .logo-glow-container::after {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
