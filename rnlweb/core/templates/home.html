@@ -15,7 +15,7 @@
   <style>
   .about-me-container {
     position: relative;
-    height: 500vh;
+    height: 800vh;
     background-image: url("{% static 'images/m2_bg_medium_2x.jpg' %}");
     background-repeat: no-repeat;
     background-size: cover;
@@ -105,11 +105,11 @@
     </div>
 
     <div class="logo-glow-container">
-        <img src="{% static 'images/r_logo_short.png' %}" class="img-fluid fade-in-image" id="image_r_only" style="opacity: 0; position: sticky; top: 0; z-index: 2;">
+      <img src="{% static 'images/r_logo_short.png' %}" class="img-fluid fade-in-image" id="image_r_only" style="opacity: 0; position: sticky; top: 0; z-index: 4;">
     </div>
 
     <div class="logo-glow-container">
-     <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image" id="image_cpu_only" style="opacity: 0; position: sticky; top: 50vh; z-index: 1;">
+     <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image" id="image_cpu_only" style="opacity: 0; position: sticky; top: 50vh; z-index: 3;">
     </div>
 
   </div>
@@ -128,7 +128,11 @@
     window.onload = function() {
       <!-- Fade in the logo -->
       window.onscroll = function () {
+        var container = document.querySelector('.about-me-container');
         var scrollHeight = window.pageYOffset;
+        var containerTop = container.offsetTop;
+        var containerHeight = container.offsetHeight;
+        var containerBottom = containerHeight + containerTop
         var windowHeight = window.innerHeight;
 
         var image1 = document.getElementById("image_r_only");
@@ -137,9 +141,15 @@
         if (scrollHeight > windowHeight / 2) {
           image1.style.opacity = Math.min((scrollHeight - windowHeight / 2) / (windowHeight / 2), 1);
         }
+        else {
+          image1.style.opacity = 0;
+        }
 
-        if (scrollHeight > windowHeight) {
-          image2.style.opacity = Math.min((scrollHeight - windowHeight) / windowHeight, 0.9);
+        if (scrollHeight > windowHeight * 3) {
+          image2.style.opacity = Math.min((scrollHeight - windowHeight * 3) / windowHeight, 0.9);
+        }
+        else {
+          image2.style.opacity = 0;
         }
       }
 
