@@ -85,19 +85,18 @@ footer {
   text-align: center;
 }
 
-/*
-.about-me-container {
-  color: #fff;
-  box-shadow: 0 4px 6px var(--gray);
-  margin-top: 10px;
+.about-me-section-container {
   position: relative;
-  height: 500vh;
-  background-image: url("{% static 'images/m2_bg_medium_2x.jpg' %}");
+  height: 800vh;
+  background-image: url("../images/m2_bg_medium_2x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-*/
 
 .about-me-text-container {
   font-weight: bold;
@@ -108,7 +107,7 @@ footer {
   transform: translate(-50%, -50%);
 }
 
-.logo-glow-container {
+.logo-container-left {
   position: sticky;
   top: 50%;
   left: 33%;
@@ -116,14 +115,21 @@ footer {
   display: inline-block;
 }
 
-.logo-glow-container::after {
+.logo-container-left::after {
   position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: 100 100 0 500px 500px rgba(250, 255, 255, 0.5); /* Adjust the color and size of the glow */
+  box-shadow: 0 0 800px 800px rgba(0, 0, 0, 0.5); /* Adjust the color and size of the glow */
   border-radius: 90%; /* Adjust the shape of the glow, if necessary */
+}
+
+.logo-container-left img {
+  object-fit: cover;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+}
+
+.logo-container-left:hover img{
+  transform: rotateX(25deg) rotateY(-25deg) rotateZ(25deg); /* 1 - From rotateX */
+  transform-origin: right; /* 2 - From bottom */
 }
 
 .sticky-nav {
