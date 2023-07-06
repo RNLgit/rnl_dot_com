@@ -81,9 +81,17 @@ footer {
   background-position: center center;
 }
 
-p.text-center.about-me-text-style {
+p.text-center.starter-text-style {
   color: #fff;
   position: absolute;
+  top: 45%;
+  opacity: 0;
+}
+
+p.text-center.about-me-text-style {
+  color: #fff;
+  position: fixed;
+  display: inline-block; 
   top: 45%;
 }
 

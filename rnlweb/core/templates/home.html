@@ -93,10 +93,10 @@
         <div class="col"></div>
         <div class="col"></div>
         <div class="col">
-          <p class="text-center about-me-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">Who am I?</p>
-          <p class="text-center about-me-text-style" style="top: 20%;">An experienced and passionate software engineer <br>with a strong dedication to his craft</p>
-          <p class="text-center about-me-text-style" style="top: 50%;">Electronics proficiently <br>Capable of developing PCBs from scratch</p>
-          <p class="text-center about-me-text-style" style="top: 70%;">Mechanical savvy <br>Designing and producing 3D models when needed</p>
+          <p class="text-center starter-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">Who am I?</p>
+          <p class="text-center about-me-text-style" id="sw-text" style="opacity: 0; top: 40vh;">An experienced and passionate software engineer <br>with a strong dedication to his craft</p>
+          <p class="text-center about-me-text-style" id="hw-text" style="opacity: 0; top: 50vh;">Electronics proficiently <br>Capable of developing PCBs from scratch</p>
+          <p class="text-center about-me-text-style" id="mech-text" style="opacity: 0; top: 60vh;">Mechanical savvy <br>Designing and producing 3D models when needed</p>
         </div>
         <div class="col"></div>
       </div>
@@ -128,7 +128,10 @@
     window.onload = function() {
       // Fade in the logo
       window.onscroll = function () {
-        var container = document.querySelector('.about-me-section-container');
+        var container = document.querySelector(".about-me-section-container");
+        var sw_txt = document.getElementById("sw-text");
+        var hw_txt = document.getElementById("hw-text");
+        var mech_txt = document.getElementById("mech-text");
         var scrollHeight = window.pageYOffset;
         var containerTop = container.offsetTop;
         var containerHeight = container.offsetHeight;
@@ -137,30 +140,42 @@
 
         var image1 = document.getElementById("image_r_only");
         var image2 = document.getElementById("image_cpu_only");
-
+        
+        // sw-text part
         if (scrollHeight > windowHeight / 2) {
-          image1.style.opacity = Math.min((scrollHeight - windowHeight / 2) / (windowHeight / 2), 1);
+          var opa = Math.min((scrollHeight - windowHeight / 2) / (windowHeight / 2), 1);
+          image1.style.opacity = opa;
+          sw_txt.style.opacity = opa;
           image1.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
         else {
           image1.style.opacity = 0;
+          sw_txt.style.opacity = 0;
           image1.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
-
+        // hw-text part
         if (scrollHeight > windowHeight * 1.5) {
-          image2.style.opacity = Math.min((scrollHeight - windowHeight * 1.5) / windowHeight, 0.9);
+          var opa = Math.min((scrollHeight - windowHeight * 1.5) / windowHeight, 0.95);
+          image2.style.opacity = opa;
+          hw_txt.style.opacity = opa;
           image2.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
         else {
           image2.style.opacity = 0;
+          hw_txt.style.opacity = 0;
           image2.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
-
+        // mech-text part
         if (scrollHeight > windowHeight * 3.5) {
+          var opa = Math.min((scrollHeight - windowHeight * 3.5) / windowHeight, 1);
+          mech_txt.style.opacity = opa;
           image1.style.transform = "translate(-50%, -50%) scale(0.4) rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
           image2.style.transform = "translate(-50%, -50%) scale(0.4) rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
           image1.style.transformOrigin = "center";
           image2.style.transformOrigin = "center";
+        }
+        else {
+          mech_txt.style.opacity = 0;
         }
       }
 
