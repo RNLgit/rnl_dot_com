@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/R_CPU_48_ICO.ico' %}">
-
 </head>
 
 
@@ -22,7 +21,8 @@
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
               <h4>About</h4>
-            <p class="text-body-secondary">Hey there, welcome to my space.</p>
+            <p class="text-body-secondary">Hey, welcome to my digital vortex.<br>
+              Feel free to look around and checkout some cool stuff.</p>
           </div>
           <div class="col-sm-4 offset-md-1 py-4">
             <h4>Contact</h4>
@@ -57,10 +57,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About Me</a>
+            <a class="nav-link active" aria-current="page" href="#about-me-section">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Highlights</a>
+            <a class="nav-link" href="#Highlights-section">Highlights</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">My Journey</a>
@@ -70,9 +70,9 @@
               Enchantments
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item disabled" href="#">Enchanted Ink (Coming Soon)</a></li>
-              <li><a class="dropdown-item disabled" href="#">Enchanted Dashboard (Coming Soon)</a></li>
-              <li><a class="dropdown-item disabled" href="#">Enchanted Analytics (Coming Soon)</a></li>
+              <li><a class="dropdown-item disabled" href="#">Enchanted Ink (Under Construction)</a></li>
+              <li><a class="dropdown-item disabled" href="#">Enchanted Dashboard (Under Construction)</a></li>
+              <li><a class="dropdown-item disabled" href="#">Enchanted Analytics (Under Construction)</a></li>
             </ul>
           </li>
         </ul>
@@ -85,7 +85,22 @@
   </nav>
 
 
-  <div class="about-me-section-container">
+  <div class="about-me-section-container" id="about-me-section">
+
+    <div class="container text-right">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+          <p class="text-center about-me-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">Who am I?</p>
+          <p class="text-center about-me-text-style" style="top: 20%;">An experienced and passionate software engineer <br>with a strong dedication to his craft</p>
+          <p class="text-center about-me-text-style" style="top: 50%;">Electronics proficiently <br>Capable of developing PCBs from scratch</p>
+          <p class="text-center about-me-text-style" style="top: 70%;">Mechanical savvy <br>Designing and producing 3D models when needed</p>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
 
     <div class="logo-container-left" style="z-index: 4;">
       <img src="{% static 'images/r_code_logo.png' %}" class="img-fluid fade-in-image" id="image_r_only" style="opacity: 0; top: 0;">
@@ -95,14 +110,9 @@
      <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image" id="image_cpu_only" style="opacity: 0; top: 0;">
     </div>
 
-     <div class="about-me-text-container">
-        <p data-text-gradient style>A passionate and experienced software engineer</p>
-        <p data-text-gradient style>with a strong dedication to his craft.</p>
-    </div>
-
   </div>
 
-  <div class="about-me-section-container"></div>
+  <div class="about-me-section-container" style="height: 100vh" id="Highlights-section"></div>
 
 
   <footer>
@@ -130,27 +140,27 @@
 
         if (scrollHeight > windowHeight / 2) {
           image1.style.opacity = Math.min((scrollHeight - windowHeight / 2) / (windowHeight / 2), 1);
-          image1.style.transform = "none";
+          image1.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
         else {
-          image1.style.opacity = "0";
-          image1.style.transform = "none";
+          image1.style.opacity = 0;
+          image1.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
 
-        if (scrollHeight > windowHeight * 3) {
-          image2.style.opacity = Math.min((scrollHeight - windowHeight * 3) / windowHeight, 0.9);
-          image2.style.transform = "none";
-        }
-
-        if (scrollHeight > windowHeight * 6) {
-          image1.style.transform = "rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
-          image2.style.transform = "rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
-          image1.style.transformOrigin = "right";
-          image2.style.transformOrigin = "right";
+        if (scrollHeight > windowHeight * 1.5) {
+          image2.style.opacity = Math.min((scrollHeight - windowHeight * 1.5) / windowHeight, 0.9);
+          image2.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
         }
         else {
-          image2.style.opacity = "0";
-          image2.style.transform = "none";
+          image2.style.opacity = 0;
+          image2.style.transform = "translate(-50%, -50%) scale(0.4)";  // scroll back
+        }
+
+        if (scrollHeight > windowHeight * 3.5) {
+          image1.style.transform = "translate(-50%, -50%) scale(0.4) rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
+          image2.style.transform = "translate(-50%, -50%) scale(0.4) rotateX(25deg) rotateY(-25deg) rotateZ(25deg)";
+          image1.style.transformOrigin = "center";
+          image2.style.transformOrigin = "center";
         }
       }
 

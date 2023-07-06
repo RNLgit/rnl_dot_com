@@ -49,20 +49,6 @@ h1, h2 {
   color: #333;
 }
 
-/* Specific Styles */
-/*
-header {
-  background-color: radial-gradient(circle, var(--teal), var(--cyan));
-  position: sticky;
-  top: 0;
-  color: #fff;
-}
-*/
-
-.bout-mecontainer {
-  overflow: auto;
-}
-
 section {
   margin-top: 20px;
   border-top: 1px solid #ccc;
@@ -87,32 +73,25 @@ footer {
 
 .about-me-section-container {
   position: relative;
-  height: 800vh;
+  height: 600vh;
   background-image: url("../images/m2_bg_medium_2x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background-position: center center;
 }
 
-.about-me-text-container {
-  font-weight: bold;
+p.text-center.about-me-text-style {
   color: #fff;
   position: absolute;
-  top: 30%;
-  right: 0;
-  transform: translate(-50%, -50%);
+  top: 45%;
 }
 
 .logo-container-left {
   position: sticky;
-  top: 50%;
-  left: 33%;
-  transform: translate(-50%, -50%) scale(0.4);
   display: inline-block;
+  top: 50%;
+  left: 35%;
 }
 
 .logo-container-left::after {
@@ -122,14 +101,10 @@ footer {
 }
 
 .logo-container-left img {
+  transform: translate(-50%, -50%) scale(0.4);
   object-fit: cover;
   transform-style: preserve-3d;
   transition: all 0.5s;
-}
-
-.logo-container-left:hover img{
-  transform: rotateX(25deg) rotateY(-25deg) rotateZ(25deg); /* 1 - From rotateX */
-  transform-origin: right; /* 2 - From bottom */
 }
 
 .sticky-nav {
@@ -137,4 +112,19 @@ footer {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+@keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.15; }
+      100% { opacity: 1; }
+    }
+
+.blinking-text {
+  animation: blink 3.9s infinite;
+}
+
+.typewriter {
+  overflow: hidden; /* Hide overflowing characters */
+  animation: typewriter 3s steps(12) infinite;
 }
