@@ -6,4 +6,8 @@ COPY requirements.txt requirements.txt
 RUN python3 -m pip install -r requirements.txt
 COPY . /www
 WORKDIR /www/rnlweb
-CMD ["python", "manage.py" , "runserver"]
+# delete for production
+RUN ["python", "manage.py", "makemigrations"]
+# delete for production
+RUN ["python", "manage.py", "migrate"]
+CMD ["python", "manage.py" , "runserver", "0.0.0.0:8000"]
