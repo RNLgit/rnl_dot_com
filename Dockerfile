@@ -1,13 +1,22 @@
-# syntax=docker/dockerfile:1
 FROM python:3.9-alpine
-RUN mkdir /www
-WORKDIR /www
+
 COPY requirements.txt requirements.txt
 RUN python3 -m pip install -r requirements.txt
-COPY . /www
-WORKDIR /www/rnlweb
-# delete for production
-RUN ["python", "manage.py", "makemigrations"]
-# delete for production
-RUN ["python", "manage.py", "migrate"]
-CMD ["python", "manage.py" , "runserver", "0.0.0.0:8000"]
+
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+COPY ./scripts /scripts
+ENV PATH="/scripts:${PATH}"
+
+RUN chmod +x /scripts/*
+RUN mkdir -p /vol/web/media
+RUN mkdir -p /vol/web/static
+
+# run production django with user with less previleges
+RUN adduser -D user
+RUN chown -R user:user /vol/
+RUN chmod 755 /vol/web
+USER user
+
+CMD ["entrypoint.sh"]
