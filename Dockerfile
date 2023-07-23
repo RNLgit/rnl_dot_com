@@ -1,13 +1,16 @@
 FROM python:3.9-alpine
 
+ENV PATH="/scripts:${PATH}"
+
 COPY ./requirements.txt requirements.txt
-RUN python3 -m pip install -r requirements.txt
+# necessary for uWSGI to run in alpine
+RUN apk add --update --no-cache --virtual .tmp gcc libc-dev linux-headers
+RUN pip install -r /requirements.txt
 
 RUN mkdir /app
 COPY . /app
 WORKDIR /app
 COPY ./scripts /scripts
-ENV PATH="/scripts:${PATH}"
 
 RUN chmod +x /scripts/*
 RUN mkdir -p /vol/web/media
