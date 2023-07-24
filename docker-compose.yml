@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./rnlweb:/app
+      - ./rnlweb:/rnlweb
     command: sh -c "python manage.py runserver 0.0.0.0:8000"
     environment:
       - DEBUG=1
