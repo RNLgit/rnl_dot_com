@@ -85,20 +85,23 @@
     </div>
   </nav>
 
-
-  <div class="row featurette about-me-section-container" id="about-me-section">
-    <div class="col-7 order-2">
-        <p class="text-center starter-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">R?</p>
-        <p class="text-center about-me-text-style" id="sw-text" style="opacity: 0; top: 40vh;">An experienced and passionate software engineer <br>with a strong dedication to his craft</p>
-        <p class="text-center about-me-text-style" id="hw-text" style="opacity: 0; top: 50vh;">Electronics proficiently <br>Capable of developing PCBs from scratch</p>
-        <p class="text-center about-me-text-style" id="mech-text" style="opacity: 0; top: 60vh;">Mechanical savvy <br>Designing and producing 3D models when needed</p>
-    </div>
-    <div class="col-5 order-1">
-      <div class="logo-container-left" style="z-index: 4; margin-left:130">
-        <img src="{% static 'images/r_code_logo.png' %}" class="img-fluid fade-in-image pl-5" id="image_r_only" style="opacity: 0; top: 0;">
+  <div class="container-fluid">
+    <div class="about-me-section-container row" id="about-me-section">
+      <div class="col-md-4">
       </div>
-      <div class="logo-container-left" style="z-index: 3; margin-left: 130">
-        <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image pl-5" id="image_cpu_only" style="opacity: 0; top: 0;">
+      <div class="col-md-4">
+        <div class="logo-container-left" style="z-index: 4;">
+          <img src="{% static 'images/r_code_logo.png' %}" class="img-fluid fade-in-image pl-5" id="image_r_only" style="opacity: 0; top: 0;">
+        </div>
+        <div class="logo-container-left" style="z-index: 3;">
+          <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image pl-5" id="image_cpu_only" style="opacity: 0; top: 0;">
+        </div>
+      </div>
+      <div class="col-md-4">
+          <p class="text-center starter-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">R?</p>
+          <p class="text-center about-me-text-style" id="sw-text" style="opacity: 0; top: 40vh;">An experienced and passionate software engineer <br>with a strong dedication to his craft</p>
+          <p class="text-center about-me-text-style" id="hw-text" style="opacity: 0; top: 50vh;">Electronics proficiently <br>Capable of developing PCBs from scratch</p>
+          <p class="text-center about-me-text-style" id="mech-text" style="opacity: 0; top: 60vh;">Mechanical savvy <br>Designing and producing 3D models when needed</p>
       </div>
     </div>
   </div>
@@ -124,19 +127,19 @@
         if(isNavbarExpanded) {
             return; // Exit the function if navbar is expanded, mobile shrinked navbar
         }
-        var container = document.querySelector(".about-me-section-container");
+        // var container = document.querySelector(".about-me-section-container");
         var sw_txt = document.getElementById("sw-text");
         var hw_txt = document.getElementById("hw-text");
         var mech_txt = document.getElementById("mech-text");
         var scrollHeight = window.pageYOffset;
-        var containerTop = container.offsetTop;
-        var containerHeight = container.offsetHeight;
-        var containerBottom = containerHeight + containerTop
+        // var containerTop = container.offsetTop;
+        // var containerHeight = container.offsetHeight;
+        // var containerBottom = containerHeight + containerTop
         var windowHeight = window.innerHeight;
 
         var image1 = document.getElementById("image_r_only");
         var image2 = document.getElementById("image_cpu_only");
-        
+
         // sw-text part
         if (scrollHeight > windowHeight / 2) {
           var opa = Math.min((scrollHeight - windowHeight / 2) / (windowHeight / 2), 1);
