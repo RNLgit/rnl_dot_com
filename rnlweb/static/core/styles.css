@@ -98,8 +98,8 @@ p.text-center.about-me-text-style {
 .logo-container-left {
   position: sticky;
   display: inline-block;
-  top: 50%;
-  left: 35%;
+  /* top: 50%;
+  left: 35%; */
 }
 
 .logo-container-left::after {
@@ -109,7 +109,7 @@ p.text-center.about-me-text-style {
 }
 
 .logo-container-left img {
-  transform: translate(-50%, -50%) scale(0.4);
+  transform: scale(0.4);
   object-fit: cover;
   transform-style: preserve-3d;
   transition: all 0.5s;
