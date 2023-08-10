@@ -96,19 +96,20 @@ p.text-center.about-me-text-style {
 }
 
 .logo-container-left {
-  position: sticky;
+  position: relative;
   display: inline-block;
   /* top: 50%;
   left: 35%; */
 }
 
 .logo-container-left::after {
-  position: sticky;
+  position: relative;
   box-shadow: 0 0 800px 800px rgba(0, 0, 0, 0.5); /* Adjust the color and size of the glow */
   border-radius: 90%; /* Adjust the shape of the glow, if necessary */
 }
 
 .logo-container-left img {
+  position: fixed;
   transform: scale(0.4);
   object-fit: cover;
   transform-style: preserve-3d;
