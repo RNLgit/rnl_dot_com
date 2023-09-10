@@ -85,31 +85,22 @@
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <div class="row about-me-section-container" id="about-me-section">
-      <div class="col-md-4">
-        <div class="logo-container-left" style="z-index: 4;">
-          <img src="{% static 'images/r_code_logo.png' %}" class="img-fluid fade-in-image" id="image_r_only" style="opacity: 0; top: 0;">
-        </div>
-        <div class="logo-container-left" style="z-index: 3;">
-          <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image" id="image_cpu_only" style="opacity: 0; top: 0;">
-        </div>
+  <div class="container-fluid about-me-section-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div class="row" style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: space-around;" id="about-me-section">
+      <div class="col col-center">
+        <p class="text-center starter-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">R?</p></div>
+      <div class="col col-center">
+        <img src="{% static 'images/r_code_logo.png' %}" class="img-fluid fade-in-image logo-container-left" id="image_r_only" style="opacity: 0; top: 0; z-index: 4;">
+        <img src="{% static 'images/r_cpu_blank.png' %}" class="img-fluid fade-in-image logo-container-left" id="image_cpu_only" style="opacity: 0; top: 0; z-index: 3;">
       </div>
-      <div class="col-4">
-          <p class="text-center starter-text-style blinking-text" style="top: 5%; left: 45%; font-size: 4vh;">R?</p>
-          <div class="row">
-            <div class="col-md-4">
-              <p class="text-center about-me-text-style" id="sw-text" style="opacity: 0; top: 40vh;">A software engineer. Experienced, passionate and holds a strong dedication to his craft</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-4">
-              <p class="text-center about-me-text-style" id="hw-text" style="opacity: 0; top: 50vh;">Electronics proficiently. Customize PCBs from scratch</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-4"><p class="text-center about-me-text-style" id="mech-text" style="opacity: 0; top: 60vh;">Mechanical savvy. Designing and producing 3D models when needed</p></div>
-          </div>
+      <div class="col col-center">
+        <p class="text-center about-me-text-style" id="sw-text" style="opacity: 0; top: 60vh">A software engineer. Experienced, passionate and holds a strong dedication to his craft</p>
+      </div>
+      <div class="col col-center">
+        <p class="text-center about-me-text-style" id="hw-text" style="opacity: 0; top: 68vh">An electronics engineer. Customize PCBs from scratch</p>
+      </div>
+      <div class="col col-center">
+        <p class="text-center about-me-text-style" id="mech-text" style="opacity: 0; top: 75vh">A mechanical savvier. Designing and producing 3D models when needed</p>
       </div>
     </div>
   </div>

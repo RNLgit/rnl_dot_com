@@ -72,7 +72,7 @@ footer {
 }
 
 .about-me-section-container {
-  position: relative;
+  position: sticky;
   height: 600vh;
   background-image: url("../images/m2_bg_medium_2x.jpg");
   background-repeat: no-repeat;
@@ -80,6 +80,14 @@ footer {
   background-attachment: fixed;
   background-position: center center;
 }
+
+  .col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as necessary */
+  }
 
 p.text-center.starter-text-style {
   color: #fff;
@@ -96,20 +104,23 @@ p.text-center.about-me-text-style {
 }
 
 .logo-container-left {
-  position: relative;
+  position: fixed;
   display: inline-block;
-  /* top: 50%;
-  left: 35%; */
+  transform: scale(0.4);
+  object-fit: cover;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+  opacity: 100;
 }
 
 .logo-container-left::after {
   position: relative;
-  box-shadow: 0 0 800px 800px rgba(0, 0, 0, 0.5); /* Adjust the color and size of the glow */
-  border-radius: 90%; /* Adjust the shape of the glow, if necessary */
+  box-shadow: 0 0 800px 800px rgba(0, 0, 0, 0.5);
+  border-radius: 90%;
 }
 
 .logo-container-left img {
-  position: fixed;
+  position: absolute;
   transform: scale(0.4);
   object-fit: cover;
   transform-style: preserve-3d;
