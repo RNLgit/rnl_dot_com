@@ -103,7 +103,7 @@ p.text-center.about-me-text-style {
   top: 45%;
 }
 
-.logo-container-left {
+.logo-container-up {
   position: fixed;
   display: inline-block;
   transform: scale(0.4);
@@ -113,13 +113,13 @@ p.text-center.about-me-text-style {
   opacity: 100;
 }
 
-.logo-container-left::after {
+.logo-container-up::after {
   position: relative;
   box-shadow: 0 0 800px 800px rgba(0, 0, 0, 0.5);
   border-radius: 90%;
 }
 
-.logo-container-left img {
+.logo-container-up img {
   position: absolute;
   transform: scale(0.4);
   object-fit: cover;
